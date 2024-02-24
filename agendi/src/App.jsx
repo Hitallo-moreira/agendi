@@ -1,8 +1,12 @@
+import Calendar from "./components/Calendar";
+import DateAvailable from "./components/DateAvailable";
+
 function App() {
   return (
-    <>
-      <h1>Titulo</h1>
-    </>
+    <div className="main">
+      <Calendar />
+      <DateAvailable />
+    </div>
   )
 }
 

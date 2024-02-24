@@ -4,3 +4,18 @@ body {
     height: 100vh;
     box-sizing: border-box;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+    border-radius: #05B387;
+    background-color: #D7FEF4;
+}
+
+button.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root:focus.Mui-selected {
+    background-color: #05B387;
+}
