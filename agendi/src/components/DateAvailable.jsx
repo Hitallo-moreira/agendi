@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 22px;
   text-align: center;
-  color: #000;
+  color: #8d8d8d;
   margin: 0 0 20px 0;
 `;
 
