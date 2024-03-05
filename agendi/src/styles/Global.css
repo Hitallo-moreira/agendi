@@ -27,3 +27,8 @@ button.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root:focus.Mui-selected {
 .css-innj4t-MuiPickersYear-yearButton.Mui-selected {
     background-color: #05B387 !important;
 }
+
+.calendar-wrapper .info h2 {
+    font-size: 28px;
+    color: #05B387;
+}

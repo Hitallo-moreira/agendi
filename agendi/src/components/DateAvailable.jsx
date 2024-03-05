@@ -7,7 +7,7 @@ const Title = styled.h1`
   margin: 0 0 20px 0;
 `;
 
-const Schedules = styled.div`
+const Schedules = styled.div`   
   width: 450px;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
