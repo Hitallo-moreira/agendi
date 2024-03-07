@@ -8,13 +8,16 @@ const HeaderInfo = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: #05B387;
-    
     color: #fff;
     font-weight: 600;
     height: 80px;
     width: 100%;
     position: sticky;
     margin-bottom: 2rem;
+
+    @media only screen and (max-width: 480px) {
+        display: block;
+    }
 `;
 
 const StyledLink = styled(Link)`
@@ -31,7 +34,7 @@ const LinkOption = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 5px;
+    gap: 8px;
 `;
 
 const Image = styled.img`
@@ -41,6 +44,11 @@ const Image = styled.img`
 
 const ScheduleText = styled.span`
     margin-top: 5px;
+    transition: all ease .2s;
+
+    &:hover {
+        color: #d9d9d9;
+    }
 `;
 
 function Header() {
@@ -57,9 +65,9 @@ function Header() {
                 <HeaderLink url="./agendamentos">
                     <LinkOption>
                         <Image src={agenda} alt="Agenda" />
-                        <ScheduleText>
+                        {/* <ScheduleText>
                             Meus agendamentos
-                        </ScheduleText>
+                        </ScheduleText> */}
                     </LinkOption>
                 </HeaderLink>
             </nav>
