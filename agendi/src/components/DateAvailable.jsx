@@ -8,10 +8,10 @@ const Title = styled.h1`
 `;
 
 const Schedules = styled.div`   
-  width: 450px;
+  width: auto;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
-  padding: 20px;
+  padding: 20px 40px;
 `;
 
 const DateGrid = styled.div`

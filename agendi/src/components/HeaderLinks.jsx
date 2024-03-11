@@ -9,6 +9,10 @@ const LinkOption = styled.div`
     text-decoration: none;
     color: #fff;
     margin-right: 4rem;
+    
+    @media only screen and (max-width: 480px) {
+        margin-right: 2rem;
+    }
 `;
 
 function HeaderLink({url, children}) {
