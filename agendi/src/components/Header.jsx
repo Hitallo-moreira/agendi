@@ -47,6 +47,7 @@ const Image = styled.img`
     width: 27px;
 
     @media only screen and (max-width: 480px) {
+        display: block;
         width: 30px;
     }
 `;
