@@ -8,10 +8,10 @@ const Title = styled.h1`
 `;
 
 const Schedules = styled.div`   
-  width: auto;
+  width: 17%;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
-  padding: 20px 40px;
+  padding: 25px;
 `;
 
 const DateGrid = styled.div`
@@ -21,7 +21,7 @@ const DateGrid = styled.div`
     gap: 10px;
 `;
 
-const Date = styled.div`
+const DateItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,29 +41,16 @@ const Date = styled.div`
     }
 `;
 
-function DateAvailable() {
+function DateAvailable({ availableTimes }) {
   return (
     <Schedules>
         <Title>Selecione um horário</Title>
         <DateGrid>
-            <Date>
-                <span>03:00</span>
-            </Date>
-            <Date className="date2">
-                <span>17:40</span>
-            </Date>
-            <Date className="date3">
-                <span>15:00</span>
-            </Date>
-            <Date className="date4">
-                <span>13:00</span>
-            </Date>
-            <Date className="date3">
-                <span>15:00</span>
-            </Date>
-            <Date className="date4">
-                <span>13:00</span>
-            </Date>
+            {availableTimes.map((time, index) => (
+              <DateItem key={index}>
+                <span>{time}</span>
+              </DateItem>
+            ))}
         </DateGrid>
     </Schedules>
   );
