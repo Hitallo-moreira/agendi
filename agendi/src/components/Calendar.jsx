@@ -5,13 +5,16 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import dayjs from 'dayjs';
 import styled from "styled-components";
 import data from "../db/db.json";
-import DateAvailable from './DateAvailable'; // Importe o componente DateAvailable
+import DateAvailable from './DateAvailable';
 
 const CalendarWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   width: 100%;
+
+  @media only screen and (max-width: 480px) {
+  }
 `;
 
 const Title = styled.h1`
@@ -20,7 +23,17 @@ const Title = styled.h1`
 
   @media only screen and (max-width: 480px) {
     font-size: 24px;
-    margin: 0 2rem 1rem 2rem;
+    margin: 0 2rem 1rem 2rem; 
+  }
+`;
+
+const DateWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -34,7 +47,7 @@ function Calendar() {
     setSelectedDate(date);
   
     const formattedDate = date.format('YYYY-MM-DD');
-    console.log('Data selecionada:', formattedDate);
+
     if (data[formattedDate]) {
       console.log('Horários disponíveis:', data[formattedDate]);
       setAvailableTimes(data[formattedDate]);
@@ -47,15 +60,17 @@ function Calendar() {
   return (
     <CalendarWrapper>
       <Title>Agende seus compromissos de forma rápida e fácil.</Title>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateCalendar 
-          minDate={minDate}
-          maxDate={maxDate}
-          value={selectedDate}
-          onChange={handleDateChange}
-        />
-      </LocalizationProvider>
-      <DateAvailable availableTimes={availableTimes} />
+      <DateWrapper>      
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DateCalendar 
+            minDate={minDate}
+            maxDate={maxDate}
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
+        </LocalizationProvider>
+        <DateAvailable availableTimes={availableTimes} selectedDateTime={selectedDate} />
+      </DateWrapper>
     </CalendarWrapper>
   );
 }
