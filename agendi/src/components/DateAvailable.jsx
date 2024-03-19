@@ -73,9 +73,11 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function DateAvailable({ availableTimes, selectedDateTime }) {
   const [open, setOpen] = useState(false);
+  const [selectedTime, setSelectedTime] = useState(null);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (time) => {
     setOpen(true);
+    setSelectedTime(time);
   };
 
   const handleClose = () => {
@@ -88,7 +90,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         <Title>Selecione um horário</Title>
         <DateGrid>
             {availableTimes.map((time, index) => (
-              <DateItem key={index} onClick={handleClickOpen}>
+              <DateItem key={index} onClick={() => handleClickOpen(time)}>
                 <span>{time}</span>
               </DateItem>
             ))}
@@ -104,7 +106,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         <ModalTitle>{"Confirmação de agendamento"}</ModalTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-          {selectedDateTime ? `Deseja confirmar seu agendamento no dia ${selectedDateTime.format('DD/MM/YYYY')} às ${selectedDateTime.format('HH:mm')} ?` : 'Deseja confirmar seu agendamento no dia'}
+          {selectedDateTime ? `Deseja confirmar seu agendamento no dia ${selectedDateTime.format('DD/MM/YYYY')} | ${selectedTime} ?` : 'Deseja confirmar seu agendamento no dia'}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
