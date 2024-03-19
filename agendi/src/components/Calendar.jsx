@@ -57,6 +57,10 @@ function Calendar() {
     }
   };
 
+  const shouldDisableDate = (date) => {
+    return date.day() === 6 || date.day() === 0;
+  };
+
   return (
     <CalendarWrapper>
       <Title>Agende seus compromissos de forma rápida e fácil.</Title>
@@ -67,6 +71,7 @@ function Calendar() {
             maxDate={maxDate}
             value={selectedDate}
             onChange={handleDateChange}
+            shouldDisableDate={shouldDisableDate}
           />
         </LocalizationProvider>
         <DateAvailable availableTimes={availableTimes} selectedDateTime={selectedDate} />
