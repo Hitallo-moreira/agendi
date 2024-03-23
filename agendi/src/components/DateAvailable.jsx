@@ -7,6 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const Title = styled.h1`
   font-size: 22px;
@@ -111,7 +112,9 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         </DialogContent>
         <DialogActions>
           <StyledButton onClick={handleClose}>Cancelar</StyledButton>
-          <StyledButton onClick={handleClose}>Confirmar</StyledButton>
+           <Link to="/agendamento">
+            <StyledButton onClick={handleClose}>Confirmar</StyledButton>
+           </Link>
         </DialogActions>
       </Dialog>
     </React.Fragment>
