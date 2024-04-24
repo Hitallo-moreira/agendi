@@ -49,7 +49,6 @@ function Calendar() {
     const formattedDate = date.format('YYYY-MM-DD');
 
     if (data[formattedDate]) {
-      console.log('Horários disponíveis:', data[formattedDate]);
       setAvailableTimes(data[formattedDate]);
     } else {
       console.log('Sem horários disponíveis para esta data.');

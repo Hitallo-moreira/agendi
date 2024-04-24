@@ -1,60 +1,74 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { useDateTime } from '../context/DateTimeContext';
+import clock from '../assets/clock.svg';
 
 const Card = styled.div`
-   height: 200px;
-   width: 250px;
-   border: 1px solid #ccc;
-   border-radius: 20px;
-   -webkit-box-shadow: 1px 10px 42px -15px rgba(0,0,0,0.26);
-   -moz-box-shadow: 1px 10px 42px -15px rgba(0,0,0,0.26);
-   box-shadow: 1px 10px 42px -15px rgba(0,0,0,0.26);
+  height: 200px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 1px 10px 42px -15px rgba(0, 0, 0, 0.26);
+  padding: 15px;
 `;
 
-const Date = styled.div`
-   color: #000;
-   font-size: 24px;
-   font-weight: 600;
+const IconDiv = styled.div`
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 10px;
+
+  img {
+    height: auto;
+    width: 37px;
+  }
 `;
 
-const Hour = styled.div`
-   color: #000;
-   font-size: 24px;
-   font-weight: 600;
+const DateText = styled.div`
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+`;
+
+const HourText = styled.div`
+  color: #000;
+  font-size: 28px;
+  font-weight: 600;
 `;
 
 const CancelButton = styled.button`
-   background-color: #e40521;
-   color: #fff;
-   font-size: 18px;
-   border-radius: 10px;
-   border: none;
-   height: 50px;
-   width: 100%;
-   cursor: pointer;
-   transition: .3s;
+  background-color: #e40521;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1.5rem;
 
-   &:hover {
+  &:hover {
     background-color: #ff0022;
-   }
+  }
 `;
 
 function ScheduleCard() {
-    return (
-        <Card>
-            <IconDiv>
-                <img src={clock} alt="Relógio" />
-            </IconDiv>
-            <Date>
-                05/03/2024
-            </Date>
-            <Hour>
-                09:30
-            </Hour>
-            <div className="cancel">
-                <CancelButton>Cancelar</CancelButton>
-            </div>
-        </Card>
-    )
+  const { selectedDateTime } = useDateTime();
+
+  return (
+    <Card>
+      <IconDiv>
+        <img src={clock} alt="Relógio" />
+      </IconDiv>
+      <DateText>{selectedDateTime ? selectedDateTime.format('DD/MM/YYYY') : 'Data não selecionada'}</DateText>
+      <HourText>{selectedDateTime ? selectedDateTime.format('HH:mm') : 'Horário não selecionado'}</HourText>
+      <div className="cancel">
+        <CancelButton>Cancelar</CancelButton>
+      </div>
+    </Card>
+  );
 }
 
 export default ScheduleCard;

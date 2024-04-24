@@ -112,7 +112,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         </DialogContent>
         <DialogActions>
           <StyledButton onClick={handleClose}>Cancelar</StyledButton>
-           <Link to="/agendamento">
+           <Link to="/agendamentos">
             <StyledButton onClick={handleClose}>Confirmar</StyledButton>
            </Link>
         </DialogActions>
