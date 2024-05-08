@@ -8,8 +8,6 @@ export const DateTimeProvider = ({ children }) => {
   const [selectedDateTime, setSelectedDateTime] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
-  console.log(selectedDateTime, selectedTime);
-
   return (
     <DateTimeContext.Provider value={{ selectedDateTime, setSelectedDateTime, selectedTime, setSelectedTime }}>
       {children}
