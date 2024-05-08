@@ -8,6 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { useDateTimeContext } from '../context/DateTimeContext';
 
 const Title = styled.h1`
   font-size: 22px;
@@ -74,7 +75,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function DateAvailable({ availableTimes, selectedDateTime }) {
   const [open, setOpen] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(null);
+  // const [selectedTime, setSelectedTime] = useState(null);
+  const {selectedTime, setSelectedTime} = useDateTimeContext();
 
   const handleClickOpen = (time) => {
     setOpen(true);

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useDateTime } from '../context/DateTimeContext';
+import { useDateTimeContext } from '../context/DateTimeContext';
 import clock from '../assets/clock.svg';
 
 const Card = styled.div`
@@ -55,15 +55,15 @@ const CancelButton = styled.button`
 `;
 
 function ScheduleCard() {
-  const { selectedDateTime } = useDateTime();
+  const { selectedDateTime, selectedTime } = useDateTimeContext();
 
   return (
     <Card>
       <IconDiv>
         <img src={clock} alt="Relógio" />
       </IconDiv>
-      <DateText>{selectedDateTime ? selectedDateTime.format('DD/MM/YYYY') : 'Data não selecionada'}</DateText>
-      <HourText>{selectedDateTime ? selectedDateTime.format('HH:mm') : 'Horário não selecionado'}</HourText>
+      <DateText>{selectedDateTime ? selectedDateTime : 'Data não selecionada'}</DateText>
+      <HourText>{selectedTime ? selectedTime : 'Horário não selecionado'}</HourText>
       <div className="cancel">
         <CancelButton>Cancelar</CancelButton>
       </div>

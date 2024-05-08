@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import styled from "styled-components";
 import data from "../db/db.json";
 import DateAvailable from './DateAvailable';
+import { useDateTimeContext } from '../context/DateTimeContext';
 
 const CalendarWrapper = styled.div`
   display: flex;
@@ -42,6 +43,8 @@ function Calendar() {
   const maxDate = dayjs('2024-03-29');
   const [selectedDate, setSelectedDate] = useState(null);
   const [availableTimes, setAvailableTimes] = useState([]);
+
+  const {setSelectedDateTime} = useDateTimeContext();
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
