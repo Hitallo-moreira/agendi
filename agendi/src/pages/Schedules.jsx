@@ -1,4 +1,4 @@
-import ScheduleCard from "../components/ScheduleCard";
+import ScheduleCard from "../components/ScheduleCard/ScheduleCard";
 
 function Schedules() {
     return (

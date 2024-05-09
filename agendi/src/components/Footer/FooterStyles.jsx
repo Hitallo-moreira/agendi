@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterElement = styled.footer`
+export const FooterElement = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,13 +12,3 @@ const FooterElement = styled.footer`
     position: fixed;
     bottom: 0;
 `;
-
-function Footer() {
-    return (
-        <FooterElement>
-            <p>Coded by Hitallo</p>
-        </FooterElement>
-    );
-}
-
-export default Footer;
