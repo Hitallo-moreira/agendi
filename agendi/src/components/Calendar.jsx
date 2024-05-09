@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import dayjs from 'dayjs';
 import styled from "styled-components";
-import data from "../db/db.json";
+import data from "../db/date.json";
 import DateAvailable from './DateAvailable';
 import { useDateTimeContext } from '../context/DateTimeContext';
 
