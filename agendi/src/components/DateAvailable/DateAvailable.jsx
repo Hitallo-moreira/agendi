@@ -25,6 +25,29 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
     setOpen(false);
   };
 
+  const handleConfirm = () => {
+    const scheduleData = {
+      date: selectedDateTime.format('DD-MM-YYYY'),
+      time: selectedTime
+    };
+
+    fetch('http://localhost:3000/schedules', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(scheduleData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Agendamento confirmado:', data);
+      handleClose();
+    })
+    .catch(error => {
+      alert('Erro ao confirmar agendamento:', error);
+    });
+  };
+
   return (
     <React.Fragment>
       <Schedules>
@@ -53,7 +76,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         <DialogActions>
           <StyledButton onClick={handleClose}>Cancelar</StyledButton>
           <Link to="/agendamentos">
-            <StyledButton onClick={handleClose}>Confirmar</StyledButton>
+            <StyledButton onClick={handleConfirm}>Confirmar</StyledButton>
           </Link>
         </DialogActions>
       </Dialog>
