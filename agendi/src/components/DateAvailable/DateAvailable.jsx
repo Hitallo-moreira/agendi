@@ -7,6 +7,7 @@ import Slide from '@mui/material/Slide';
 import { Title, Schedules, DateGrid, DateItem, ModalTitle, StyledButton } from "./DateAvailableStyles";
 import { Link } from 'react-router-dom';
 import { useDateTimeContext } from '../../context/DateTimeContext';
+import axios from 'axios';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -24,6 +25,20 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleConfirmation = () => {
+    axios.post('http://localhost:3000/schedules', {
+      selectedDateTime: selectedDateTime.format('DD-MM-YYYY'),
+      selectedTime: selectedTime
+    })
+    .then((response) => {
+      console.log(response);
+      handleClose();
+    })
+    .catch((error) => {
+       console.log("Não foi possível realizar o agendamento", error);
+     });
+  }
 
   return (
     <React.Fragment>
@@ -53,7 +68,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         <DialogActions>
           <StyledButton onClick={handleClose}>Cancelar</StyledButton>
           <Link to="/agendamentos">
-            <StyledButton onClick={handleClose}>Confirmar</StyledButton>
+            <StyledButton onClick={handleConfirmation}>Confirmar</StyledButton>
           </Link>
         </DialogActions>
       </Dialog>
