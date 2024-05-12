@@ -1,7 +1,18 @@
 import { Card, IconDiv, DateText, HourText, CancelButton } from './ScheduleCardStyles';
 import clock from '../../assets/clock.svg';
+import axios from 'axios';
 
-function ScheduleCard({ selectedDateTime, selectedTime }) {
+function ScheduleCard({ id, selectedDateTime, selectedTime }) {
+  const handleCancelAppointment = async () => {
+    try {
+      await axios.delete(`http://localhost:3000/schedules/${id}`);
+      window.location.reload();
+    } catch (error) {
+      console.error('Erro ao cancelar o agendamento:', error);
+    }
+  };
+
+
   return (
     <Card>
       <IconDiv>
@@ -10,7 +21,7 @@ function ScheduleCard({ selectedDateTime, selectedTime }) {
       <DateText>{selectedDateTime}</DateText>
       <HourText>{selectedTime}</HourText>
       <div className="cancel">
-        <CancelButton>Cancelar</CancelButton>
+        <CancelButton onClick={handleCancelAppointment}>Cancelar</CancelButton>
       </div>
     </Card>
   );
