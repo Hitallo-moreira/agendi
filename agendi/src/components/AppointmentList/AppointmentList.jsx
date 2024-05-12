@@ -11,12 +11,10 @@ function AppointmentList() {
       try {
         const response = await axios.get('http://localhost:3000/schedules');
         const data = response.data;
-        console.log("Dados recebidos:", data);
         const appointmentsArray = Object.values(data);
-        console.log("Array de agendamentos:", appointmentsArray);
         setAppointments(appointmentsArray);
       } catch (error) {
-        console.error('Erro ao buscar agendamentos:', error);
+        alert('Erro ao buscar agendamentos:');
       }
     };
   
