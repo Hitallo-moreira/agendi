@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 
 function Layout({ children }) {
     return (
-        <main>
+        <main style={{height: "100vh"}}>
             <Header />
                 {children}
             <Footer />

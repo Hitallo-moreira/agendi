@@ -7,6 +7,16 @@ export const Card = styled.div`
   border-radius: 20px;
   box-shadow: 1px 10px 42px -15px rgba(0, 0, 0, 0.26);
   padding: 15px;
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width: 640px) {
+    height: auto;
+    width: 75%;
+    margin: 10px auto;
+  }
 `;
 
 export const IconDiv = styled.div`
@@ -19,6 +29,12 @@ export const IconDiv = styled.div`
   img {
     height: auto;
     width: 37px;
+  }
+
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 32px;
+    }
   }
 `;
 
@@ -48,5 +64,9 @@ export const CancelButton = styled.button`
 
   &:hover {
     background-color: #ff0022;
+  }
+
+  @media only screen and (max-width: 640px) {
+    height: 40px;
   }
 `;

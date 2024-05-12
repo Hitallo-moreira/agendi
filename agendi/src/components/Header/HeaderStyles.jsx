@@ -10,7 +10,6 @@ export const HeaderInfo = styled.header`
     font-weight: 600;
     height: 80px;
     width: 100%;
-    position: sticky;
     margin-bottom: 2rem;
 
     @media only screen and (max-width: 480px) {

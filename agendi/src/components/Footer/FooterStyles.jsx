@@ -11,4 +11,8 @@ export const FooterElement = styled.footer`
     margin-top: 2rem;
     position: fixed;
     bottom: 0;
+
+    @media only screen and (max-width: 1024px) {
+        position: relative;
+    }
 `;
