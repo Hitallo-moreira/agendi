@@ -11,6 +11,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    
+  @media only screen and (max-width: 1024px) {
+    height: 100%;
+  }
 }
 
 .css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {

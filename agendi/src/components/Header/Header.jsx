@@ -7,7 +7,7 @@ function Header() {
             <StyledLink to="./">
                 <div>
                     <Logo>
-                        AgendI
+                        Agendi
                     </Logo>
                 </div>
             </StyledLink>

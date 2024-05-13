@@ -7,6 +7,7 @@ import Slide from '@mui/material/Slide';
 import { Title, Schedules, DateGrid, DateItem, ModalTitle, StyledButton } from "./DateAvailableStyles";
 import { Link } from 'react-router-dom';
 import { useDateTimeContext } from '../../context/DateTimeContext';
+import axios from 'axios';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -25,28 +26,19 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
     setOpen(false);
   };
 
-  const handleConfirm = () => {
-    const scheduleData = {
-      date: selectedDateTime.format('DD-MM-YYYY'),
-      time: selectedTime
-    };
-
-    fetch('http://localhost:3000/schedules', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(scheduleData)
+  const handleConfirmation = () => {
+    axios.post('http://localhost:3000/schedules', {
+      selectedDateTime: selectedDateTime.format('DD-MM-YYYY'),
+      selectedTime: selectedTime
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Agendamento confirmado:', data);
+    .then((response) => {
+      console.log(response);
       handleClose();
     })
-    .catch(error => {
-      alert('Erro ao confirmar agendamento:', error);
-    });
-  };
+    .catch((error) => {
+       console.log("Não foi possível realizar o agendamento", error);
+     });
+  }
 
   return (
     <React.Fragment>
@@ -76,7 +68,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
         <DialogActions>
           <StyledButton onClick={handleClose}>Cancelar</StyledButton>
           <Link to="/agendamentos">
-            <StyledButton onClick={handleConfirm}>Confirmar</StyledButton>
+            <StyledButton onClick={handleConfirmation}>Confirmar</StyledButton>
           </Link>
         </DialogActions>
       </Dialog>

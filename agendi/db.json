@@ -1,54 +1,54 @@
 {
   "schedules": [
     {
-      "id": "cf0a",
-      "date": "2024-03-13",
-      "time": "12:00"
+      "id": "22b6",
+      "selectedDateTime": "04-03-2024",
+      "selectedTime": "10:30"
     },
     {
-      "id": "c2b8",
-      "date": "2024-03-04",
-      "time": "09:00"
+      "id": "c7b1",
+      "selectedDateTime": "04-03-2024",
+      "selectedTime": "13:00"
     },
     {
-      "id": "aec7",
-      "date": "2024-03-29",
-      "time": "14:00"
+      "id": "2d3f",
+      "selectedDateTime": "29-03-2024",
+      "selectedTime": "14:00"
     },
     {
-      "id": "282b",
-      "date": "2024-03-04",
-      "time": "13:00"
+      "id": "4652",
+      "selectedDateTime": "05-03-2024",
+      "selectedTime": "12:30"
     },
     {
-      "id": "1ebd",
-      "date": "08-03-2024",
-      "time": "16:30"
+      "id": "6156",
+      "selectedDateTime": "04-03-2024",
+      "selectedTime": "13:00"
     },
     {
-      "id": "28d5",
-      "date": "27-03-2024",
-      "time": "15:30"
+      "id": "aa86",
+      "selectedDateTime": "11-03-2024",
+      "selectedTime": "10:00"
     },
     {
-      "id": "41bf",
-      "date": "26-03-2024",
-      "time": "16:30"
+      "id": "29ae",
+      "selectedDateTime": "27-03-2024",
+      "selectedTime": "12:30"
     },
     {
-      "id": "f867",
-      "date": "04-03-2024",
-      "time": "13:00"
+      "id": "c94a",
+      "selectedDateTime": "20-03-2024",
+      "selectedTime": "13:00"
     },
     {
-      "id": "b2bb",
-      "date": "29-03-2024",
-      "time": "17:30"
+      "id": "9f2d",
+      "selectedDateTime": "13-03-2024",
+      "selectedTime": "12:00"
     },
     {
-      "id": "c0b6",
-      "date": "14-03-2024",
-      "time": "12:15"
+      "id": "658d",
+      "selectedDateTime": "20-03-2024",
+      "selectedTime": "18:30"
     }
   ]
 }

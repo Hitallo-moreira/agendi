@@ -1,25 +1,30 @@
-import React from 'react';
 import { Card, IconDiv, DateText, HourText, CancelButton } from './ScheduleCardStyles';
-import { useDateTimeContext } from '../../context/DateTimeContext';
 import clock from '../../assets/clock.svg';
+import axios from 'axios';
 
-function ScheduleCard() {
-  const { selectedDateTime, selectedTime } = useDateTimeContext();
-  const formattedDateTime = selectedDateTime? selectedDateTime.format('DD-MM-YYYY') : '';
+function ScheduleCard({ id, selectedDateTime, selectedTime }) {
+  const handleCancelAppointment = async () => {
+    try {
+      await axios.delete(`http://localhost:3000/schedules/${id}`);
+      window.location.reload();
+    } catch (error) {
+      console.error('Erro ao cancelar o agendamento:', error);
+    }
+  };
+
 
   return (
     <Card>
       <IconDiv>
         <img src={clock} alt="Relógio" />
       </IconDiv>
-      <DateText>{formattedDateTime}</DateText>
-      <HourText>{selectedTime? selectedTime : 'Horário não selecionado'}</HourText>
+      <DateText>{selectedDateTime}</DateText>
+      <HourText>{selectedTime}</HourText>
       <div className="cancel">
-        <CancelButton>Cancelar</CancelButton>
+        <CancelButton onClick={handleCancelAppointment}>Cancelar</CancelButton>
       </div>
     </Card>
   );
 }
-
 
 export default ScheduleCard;
