@@ -14,7 +14,7 @@ export const Card = styled.div`
 
   @media only screen and (max-width: 640px) {
     height: auto;
-    width: 75%;
+    width: 80%;
     margin: 10px auto;
   }
 `;

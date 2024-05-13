@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
-import { AppointmentsWrapper } from "./AppointmentListStyles";
+import { AppointmentsWrapper, AppointmentsGrid } from "./AppointmentListStyles";
 
 function AppointmentList() {
   const [appointments, setAppointments] = useState([]);
@@ -23,14 +23,16 @@ function AppointmentList() {
   
   return (
     <AppointmentsWrapper>
-      {appointments.map((appointment, index) => (
-        <ScheduleCard
-          key={index}
-          id={appointment.id}
-          selectedDateTime={appointment.selectedDateTime}
-          selectedTime={appointment.selectedTime}
-        />
-      ))}
+      <AppointmentsGrid>
+          {appointments.map((appointment, index) => (
+            <ScheduleCard
+              key={index}
+              id={appointment.id}
+              selectedDateTime={appointment.selectedDateTime}
+              selectedTime={appointment.selectedTime}
+            />
+          ))}
+      </AppointmentsGrid>
     </AppointmentsWrapper>
   );
 }
