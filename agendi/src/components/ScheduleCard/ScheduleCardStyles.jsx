@@ -14,7 +14,6 @@ export const Card = styled.div`
 
   @media only screen and (max-width: 640px) {
     height: auto;
-    width: 80%;
     margin: 10px auto;
   }
 `;
@@ -64,9 +63,5 @@ export const CancelButton = styled.button`
 
   &:hover {
     background-color: #ff0022;
-  }
-
-  @media only screen and (max-width: 640px) {
-    height: 40px;
   }
 `;
