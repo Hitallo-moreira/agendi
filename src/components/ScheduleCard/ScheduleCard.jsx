@@ -5,7 +5,7 @@ import axios from 'axios';
 function ScheduleCard({ id, selectedDateTime, selectedTime }) {
   const handleCancelAppointment = async () => {
     try {
-      await axios.delete(`http://localhost:3000/schedules/${id}`);
+      await axios.delete(`/db.json/${id}`);
       window.location.reload();
     } catch (error) {
       console.error('Erro ao cancelar o agendamento:', error);

@@ -27,7 +27,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
   };
 
   const handleConfirmation = () => {
-    axios.post('http://localhost:3000/schedules', {
+    axios.post('/db.json', {
       selectedDateTime: selectedDateTime.format('DD-MM-YYYY'),
       selectedTime: selectedTime
     })
