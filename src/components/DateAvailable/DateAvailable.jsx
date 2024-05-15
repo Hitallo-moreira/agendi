@@ -27,7 +27,7 @@ function DateAvailable({ availableTimes, selectedDateTime }) {
   };
 
   const handleConfirmation = () => {
-    axios.post('/db.json', {
+    axios.post('https://agendi.vercel.app/db.json/', {
       selectedDateTime: selectedDateTime.format('DD-MM-YYYY'),
       selectedTime: selectedTime
     })

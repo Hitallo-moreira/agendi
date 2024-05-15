@@ -9,7 +9,7 @@ function AppointmentList() {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await axios.get('/db.json');
+        const response = await axios.get('https://agendi.vercel.app/db.json/');
         const data = response.data;
         const appointmentsArray = Object.values(data);
         setAppointments(appointmentsArray);
