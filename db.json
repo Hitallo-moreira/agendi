@@ -1,26 +1,6 @@
 {
   "schedules": [
     {
-      "id": "22b6",
-      "selectedDateTime": "04-03-2024",
-      "selectedTime": "10:30"
-    },
-    {
-      "id": "c7b1",
-      "selectedDateTime": "04-03-2024",
-      "selectedTime": "13:00"
-    },
-    {
-      "id": "2d3f",
-      "selectedDateTime": "29-03-2024",
-      "selectedTime": "14:00"
-    },
-    {
-      "id": "4652",
-      "selectedDateTime": "05-03-2024",
-      "selectedTime": "12:30"
-    },
-    {
       "id": "6156",
       "selectedDateTime": "04-03-2024",
       "selectedTime": "13:00"
